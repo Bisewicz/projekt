@@ -6,11 +6,6 @@ class Wielomian
 public:
 	Wielomian(){}
 	Wielomian(int n) :potega(n) {}
-	Wielomian(const Wielomian& jakis)
-	{
-		potega = jakis.potega;
-		wartosci = jakis.wartosci;
-	}
 	~Wielomian() {}
 	void wprowadz_wielomian();
 	void pokaz_wielomian();
