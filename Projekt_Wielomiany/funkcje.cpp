@@ -3,6 +3,14 @@
 
 using namespace std;
 
+template <class A>
+void zamien(A* a, A* b)
+{
+	A c = *a;
+	*a = *b;
+	*b = c;
+}
+
 Wielomian sumaWielomianow(Wielomian pierwszy, Wielomian drugi)
 {
 	int wiekszapotega = 0;
@@ -30,8 +38,6 @@ Wielomian sumaWielomianow(Wielomian pierwszy, Wielomian drugi)
 	}
 	return wynik_sumy;
 }
-
-
 Wielomian roznicaWielomianow(Wielomian pierwszy, Wielomian drugi)
 {
 	int roznica_wielkosci = 0;
@@ -85,7 +91,6 @@ Wielomian roznicaWielomianow(Wielomian pierwszy, Wielomian drugi)
 	}
 }
 
-
 Wielomian mnozenieWielomianow(Wielomian pierwszy, Wielomian drugi)
 {
 	int sumapoteg = (pierwszy.potega + drugi.potega);
@@ -105,11 +110,11 @@ Wielomian dzielenieWielomianow(Wielomian pierwszy, Wielomian drugi)
 	int roznica_poteg = ((pierwszy.potega)- (drugi.potega));
 	Wielomian wynik_dzielenia(roznica_poteg);
 	Wielomian pomoc_1 = pierwszy;
-	int reszta = 0;
+	float reszta = 0;
 	while(!((pomoc_1.potega==0)&& (pomoc_1.wartosci[0] == 0)))
 	{
 		Wielomian pomoc_mnoznik((pomoc_1.potega) - drugi.potega);
-		int mnoznik = (pomoc_1.wartosci[pomoc_1.potega] / drugi.wartosci[drugi.potega]);
+		float mnoznik = (pomoc_1.wartosci[pomoc_1.potega] / drugi.wartosci[drugi.potega]);
 		wynik_dzielenia.wartosci[pomoc_mnoznik.potega] = mnoznik;
 		pomoc_mnoznik.wartosci[pomoc_mnoznik.potega] = mnoznik;
 		Wielomian pomoc_2 = mnozenieWielomianow(pomoc_mnoznik, drugi);

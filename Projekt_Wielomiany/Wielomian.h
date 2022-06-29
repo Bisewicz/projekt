@@ -1,8 +1,7 @@
-
 class Wielomian
 {
 	int potega;
-	int* wartosci = new int[potega+1] {};
+	float* wartosci = new float[potega+1] {};
 public:
 	Wielomian(){}
 	Wielomian(int n) :potega(n) {}

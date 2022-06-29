@@ -10,6 +10,7 @@ void Wielomian::wprowadz_wielomian()
 		cin >> wartosci[i];
 	}
 }
+
 void Wielomian::pokaz_wielomian()
 {
 	for (int i = potega;i >= 0;i--)
